@@ -7,8 +7,9 @@ import Card3 from "./Card3";
 import { HiBell } from "react-icons/hi";
 import { BsFillPhoneFill } from "react-icons/bs";
 import { HiFire } from "react-icons/hi";
-import { leftLogos, rightLogos } from "../logos";
+import { leftLogos, rightLogos, faqs } from "../logos";
 import LogoTab from "./LogoTab";
+import FAQTab from "./FAQTab";
 
 function App() {
   function logoTabLeft(logo, idx) {
@@ -19,11 +20,17 @@ function App() {
     return <LogoTab logo={logo} idx={idx} num="1" />;
   }
 
+  function showFAQ(q, idx) {
+    const { question, ans } = q;
+    return <FAQTab idx={idx} question={question} ans={ans} />;
+  }
+
   return (
     <div>
       <Navbar />
-      <BreakLine />
+      <BreakLine backgroundColor="rgb(230, 230, 230)" />
       <Section1
+        alignCenter="alignCenter"
         text="Empower your business with"
         highlight="Strategic"
         text2="insights"
@@ -37,6 +44,7 @@ function App() {
         width="1200px"
       />
       <Section1
+        alignCenter="alignCenter"
         height="300px"
         display="none"
         textSize="50"
@@ -50,6 +58,7 @@ function App() {
       <Card1 />
       <div className="set-bg">
         <Section1
+          alignCenter="alignCenter"
           fontColor="white"
           align="start"
           height="300px"
@@ -83,11 +92,12 @@ function App() {
           />
         </div>
         <div className="display-row2">
-          <div>{leftLogos.map(logoTabLeft)}</div>
+          <div className="marginTop">{leftLogos.map(logoTabLeft)}</div>
           <div>
             <Section1
               fontColor="white"
               align="center"
+              alignCenter="alignCenter"
               width="70%"
               height="400px"
               display="none"
@@ -102,13 +112,35 @@ function App() {
               marginTop="10rem"
             />
             <Section2
-              width="40%"
+              width="70%"
               radius="0px"
               marginBottom="-15px"
               image="https://framerusercontent.com/images/sQd7MkwgkdQRRQ1a99k5Z1zLfA.png"
             />
           </div>
-          <div>{rightLogos.map(logoTabRight)}</div>
+          <div className="marginTop">{rightLogos.map(logoTabRight)}</div>
+        </div>
+      </div>
+      <BreakLine backgroundColor="black" />
+      <div className="alignCenter marginTop">
+        <div className="setWidth">
+          <div className="faq-display-row">
+            <Section1
+              fontColor="black"
+              align="start"
+              width="65%"
+              height="300px"
+              display="none"
+              textSize="50"
+              text="Need"
+              highlight="Answers?"
+              subtext="Check out our most commonly asked questions below to find the information you need."
+              tabText="FAQ"
+              icon="🙋‍♀️"
+              paraWidth="75%"
+            />
+            <div>{faqs.map(showFAQ)}</div>
+          </div>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import WatchDemoBtn from "./WatchDemoBtn";
 
 function Section1(props) {
   return (
-    <div className="alignCenter" style={{marginTop: props.marginTop}}>
+    <div className={props.alignCenter} style={{marginTop: props.marginTop}}>
       <div className="setWidth" style={{width: props.width}}>
         <div
           style={{ height: props.height, alignItems: props.align}}

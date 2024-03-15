@@ -1,5 +1,5 @@
-function BreakLine() {
-    return <div className="break-line">
+function BreakLine(props) {
+    return <div className="break-line" style={{backgroundColor: props.backgroundColor}}>
     </div>;
 }
 
