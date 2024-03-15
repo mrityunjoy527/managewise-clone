@@ -7,8 +7,18 @@ import Card3 from "./Card3";
 import { HiBell } from "react-icons/hi";
 import { BsFillPhoneFill } from "react-icons/bs";
 import { HiFire } from "react-icons/hi";
+import { leftLogos, rightLogos } from "../logos";
+import LogoTab from "./LogoTab";
 
 function App() {
+  function logoTabLeft(logo, idx) {
+    return <LogoTab logo={logo} idx={idx} num="0" />;
+  }
+
+  function logoTabRight(logo, idx) {
+    return <LogoTab logo={logo} idx={idx} num="1" />;
+  }
+
   return (
     <div>
       <Navbar />
@@ -22,7 +32,10 @@ function App() {
         tabText="WELCOME TO MANAGE WISE!"
         icon="👋"
       />
-      <Section2 />
+      <Section2
+        image="https://framerusercontent.com/images/t9qCSNfZSNdBCMSiohCGNEIl4.jpg?scale-down-to=2048"
+        width="1200px"
+      />
       <Section1
         height="300px"
         display="none"
@@ -32,6 +45,7 @@ function App() {
         subtext="Don't settle for mediocrity - embrace the future of management with Manage Wise."
         tabText="PREMIER FEATURES"
         icon="🔥"
+        paraWidth="50%"
       />
       <Card1 />
       <div className="set-bg">
@@ -47,6 +61,7 @@ function App() {
           subtext="Discover the tools that will revolutionize the way you manage and optimize your operations"
           tabText="AND MORE..."
           icon="🤩"
+          paraWidth="45%"
         />
       </div>
       <div className="set-bg alignCenter">
@@ -66,6 +81,34 @@ function App() {
             title="Secure Data Encryption at all times"
             para="Trust in our robust data encryption to keep your sensitive information safe and secure. Rest easy knowing your data is protected at all times."
           />
+        </div>
+        <div className="display-row2">
+          <div>{leftLogos.map(logoTabLeft)}</div>
+          <div>
+            <Section1
+              fontColor="white"
+              align="center"
+              width="70%"
+              height="400px"
+              display="none"
+              textSize="50"
+              text="Enable"
+              highlight="integration"
+              text2="with other popular tools and platforms"
+              subtext="Seamlessly connect and amplify your workflow by enabling integration with a diverse array of widely-used tools and platforms."
+              tabText="INTEGRATIONS"
+              icon="🛠"
+              paraWidth="75%"
+              marginTop="10rem"
+            />
+            <Section2
+              width="40%"
+              radius="0px"
+              marginBottom="-15px"
+              image="https://framerusercontent.com/images/sQd7MkwgkdQRRQ1a99k5Z1zLfA.png"
+            />
+          </div>
+          <div>{rightLogos.map(logoTabRight)}</div>
         </div>
       </div>
     </div>

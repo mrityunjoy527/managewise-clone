@@ -1,10 +1,8 @@
-function Section2() {
+function Section2(props) {
   return (
-    <img
-      id="photo1"
-      src="https://framerusercontent.com/images/t9qCSNfZSNdBCMSiohCGNEIl4.jpg?scale-down-to=2048"
-      alt=""
-    />
+    <div className="alignCenter" style={{overflow: "hidden"}}>
+      <img style={{width: props.width, marginBottom: props.marginBottom, borderBottomRightRadius: props.radius, borderBottomLeftRadius: props.radius}} id="photo1" src={props.image} alt="" />
+    </div>
   );
 }
 
