@@ -10,6 +10,8 @@ import { HiFire } from "react-icons/hi";
 import { leftLogos, rightLogos, faqs } from "../logos";
 import LogoTab from "./LogoTab";
 import FAQTab from "./FAQTab";
+import PricingTab from "./PricingTab";
+import pricing from "../pricing";
 
 function App() {
   function logoTabLeft(logo, idx) {
@@ -38,6 +40,7 @@ function App() {
         operations, boost productivity, and drive success"
         tabText="WELCOME TO MANAGE WISE!"
         icon="👋"
+        textSize="70"
       />
       <Section2
         image="https://framerusercontent.com/images/t9qCSNfZSNdBCMSiohCGNEIl4.jpg?scale-down-to=2048"
@@ -128,7 +131,7 @@ function App() {
             <Section1
               fontColor="black"
               align="start"
-              width="65%"
+              width="100%"
               height="300px"
               display="none"
               textSize="50"
@@ -138,8 +141,38 @@ function App() {
               tabText="FAQ"
               icon="🙋‍♀️"
               paraWidth="75%"
+              divWidth="30%"
             />
             <div>{faqs.map(showFAQ)}</div>
+          </div>
+        </div>
+      </div>
+      <div className="alignCenter marginTop">
+        <div className="setWidth">
+          <Section1
+            fontColor="black"
+            align="center"
+            width="100%"
+            height="300px"
+            display="none"
+            textSize="50"
+            text="Select your ideal"
+            text2="plan"
+            highlight="Pricing"
+            subtext="At Manage Wise, we believe in providing you with pricing plans that adapt to your unique needs."
+            tabText="PRICING"
+            icon="💲"
+            paraWidth="40%"
+          />
+          <div className="display-row">
+            {pricing.map((e, idx) => (
+              <PricingTab
+                idx={idx}
+                text={e.quality}
+                price={e.price}
+                benefits={e.benefits}
+              />
+            ))}
           </div>
         </div>
       </div>

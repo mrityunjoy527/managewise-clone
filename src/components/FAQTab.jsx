@@ -5,15 +5,20 @@ import { useState } from "react";
 function FAQTab(props) {
   const [expanded, setExpand] = useState(false);
 
+
   return (
-    <div key={props.idx} className="faq">
-      <div onClick={() => setExpand((prev) => !prev)}  className="faq-head">
-        <h3 style={{color: expanded? "rgb(130, 71, 255)": "black"}}>{props.question}</h3>
-        {expanded ? <RxCross2 className="faq-icon" /> : <GoPlus className="faq-icon" />}
+    <div onClick={() => setExpand((prev) => !prev)} key={props.idx} className="faq">
+      <div className="faq-head">
+        <h3 style={{ color: expanded ? "rgb(130, 71, 255)" : "black",}}>
+          {props.question}
+        </h3>
+        {expanded ? (
+          <RxCross2 className="faq-icon" />
+        ) : (
+          <GoPlus className="faq-icon" />
+        )}
       </div>
-      <p style={{display: expanded? "block" : "none"}}>
-        {props.ans}
-      </p>
+      {expanded && <p>{props.ans}</p>}
     </div>
   );
 }

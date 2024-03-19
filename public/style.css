@@ -125,7 +125,6 @@ body {
 
 #welcome h5 {
     font-size: 12px;
-    vertical-align: middle;
 }
 
 #welcome span {
@@ -438,7 +437,7 @@ body {
 .display-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
 }
 
 .logo-bg {
@@ -477,7 +476,9 @@ body {
 }
 
 .faq {
-    width: 700px;
+    width: 600px;
+    height: auto;
+    overflow: hidden;
     background-color: #f7f7fe;
     padding: 20px 30px;
     border-radius: 20px;
@@ -486,11 +487,7 @@ body {
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     margin-top: 10px;
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
+    cursor: pointer;
 }
 
 .faq-head {
@@ -503,6 +500,7 @@ body {
 .faq-head h3 {
     font-size: 23px;
     font-weight: bold;
+    width: 560px;
 }
 
 .faq-icon {
@@ -523,4 +521,71 @@ body {
     color: gray;
     line-height: 23px;
     cursor: default;
+}
+
+.all-pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    background-color: #EDEDFA;
+    height: 380px;
+    width: 320px;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    padding: 40px 30px;
+}
+
+.rent-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+}
+
+.per-month-price {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.per-month-price p {
+    margin-bottom: 4px;
+}
+
+.per-month-price h1 {
+    font-size: 50px;
+}
+
+.price-benefits {
+    display: flex;
+    align-items: center;
+}
+
+.price-benefits img {
+    margin-right: 10px;
+}
+
+.benefits {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+}
+
+.get-started-hover {
+    transition: outline 0.4s;
+    -webkit-transition: outline 0.4s;
+    -moz-transition: outline 0.4s;
+    -ms-transition: outline 0.4s;
+    -o-transition: outline 0.4s;
+}
+
+.get-started-hover:hover {
+    outline: 8px solid rgba(157, 118, 255, 0.3);
 }
