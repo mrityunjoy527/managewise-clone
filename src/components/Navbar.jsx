@@ -14,8 +14,11 @@ function Navbar() {
           <div id="options">
             <ul>
               <li>Features</li>
+              <div className="dot"></div>
               <li>FAQ</li>
+              <div className="dot"></div>
               <li>Pricing</li>
+              <div className="dot"></div>
               <li>Testimonials</li>
             </ul>
           </div>

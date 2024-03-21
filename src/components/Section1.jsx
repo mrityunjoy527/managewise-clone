@@ -4,10 +4,10 @@ import WatchDemoBtn from "./WatchDemoBtn";
 
 function Section1(props) {
   return (
-    <div className={props.alignCenter} style={{marginTop: props.marginTop, width: props.divWidth}}>
-      <div className="setWidth" style={{width: props.width}}>
+    <div className={props.alignCenter} style={{ marginTop: props.marginTop, width: props.divWidth}}>
+      <div className="setWidth" style={{ width: props.width }}>
         <div
-          style={{ height: props.height, alignItems: props.align}}
+          style={{ height: props.height, alignItems: props.align }}
           id="section1"
         >
           <Tab icon={props.icon} text={props.tabText} />
@@ -20,10 +20,10 @@ function Section1(props) {
           >
             {props.text} <span>{props.highlight}</span> {props.text2}
           </h3>
-          <p style={{ textAlign: props.align , width: props.paraWidth}}>{props.subtext}</p>
-          <div className="two-btns">
-            <GetStarted display={props.display} />
-            <WatchDemoBtn display={props.display} />
+          <p style={{ textAlign: props.align, width: props.paraWidth }}>{props.subtext}</p>
+          <div className="two-btns" style={{justifyContent: props.align}}>
+            <GetStarted btnText={props.btnText} display={props.btn1} />
+            <WatchDemoBtn display={props.btn2} />
           </div>
         </div>
       </div>

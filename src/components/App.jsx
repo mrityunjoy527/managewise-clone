@@ -12,6 +12,9 @@ import LogoTab from "./LogoTab";
 import FAQTab from "./FAQTab";
 import PricingTab from "./PricingTab";
 import pricing from "../pricing";
+import { BiLogoInstagramAlt } from "react-icons/bi";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
 
 function App() {
   function logoTabLeft(logo, idx) {
@@ -49,7 +52,8 @@ function App() {
       <Section1
         alignCenter="alignCenter"
         height="300px"
-        display="none"
+        btn1="none"
+        btn2="none"
         textSize="50"
         text="Discover our product's"
         highlight="Capabilities"
@@ -65,7 +69,8 @@ function App() {
           fontColor="white"
           align="start"
           height="300px"
-          display="none"
+          btn1="none"
+          btn2="none"
           textSize="50"
           text="Explore an array of features that elevate your "
           highlight="Productivity"
@@ -103,7 +108,8 @@ function App() {
               alignCenter="alignCenter"
               width="70%"
               height="400px"
-              display="none"
+              btn1="none"
+              btn2="none"
               textSize="50"
               text="Enable"
               highlight="integration"
@@ -133,7 +139,8 @@ function App() {
               align="start"
               width="100%"
               height="300px"
-              display="none"
+              btn1="none"
+              btn2="none"
               textSize="50"
               text="Need"
               highlight="Answers?"
@@ -154,7 +161,8 @@ function App() {
             align="center"
             width="100%"
             height="300px"
-            display="none"
+            btn1="none"
+            btn2="none"
             textSize="50"
             text="Select your ideal"
             text2="plan"
@@ -174,6 +182,79 @@ function App() {
               />
             ))}
           </div>
+        </div>
+      </div>
+      <div className="alignCenter marginTop">
+        <div className="setWidth">
+          <Section1
+            align="start"
+            btn1="none"
+            btn2="none"
+            textSize="50"
+            height="200px"
+            text="Hear from our"
+            highlight="Satisfied"
+            text2="clients"
+            subtext="Discover why our clients love working with us. Read their testimonials and learn how we has helped businesses."
+            tabText="TESTIMONIALS"
+            icon="🧡"
+            paraWidth="60%"
+            divWidth="100%"
+          />
+        </div>
+      </div>
+      <div className="alignCenter marginTop">
+        <div className="setWidth alignCenter faces-tab-design">
+          <div className="faces-tab">
+            <Section1
+              align="start"
+              btn2="none"
+              textSize="50"
+              height="370px"
+              width="76%"
+              btnText="Try out now"
+              text="Unleash your "
+              highlight="Potential"
+              text2="with us"
+              subtext="Join our community of ambitious individuals and organizations eager to make a difference."
+              tabText="DON'T MISS OUT"
+              icon="👋"
+              paraWidth="100%"
+              divWidth="100%"
+            />
+            <div className="happy-faces">
+              <div className="happy">
+                <h2>200+</h2>
+                <h2>Happy users</h2>
+              </div>
+              <img className="blur" src="https://framerusercontent.com/images/584hzJDnWCS5SFABKjaCzgDspY.png" alt="" />
+              <img className="faces" src="https://framerusercontent.com/images/S4kVG1FFzSqxr8zOqpvJRfsBad0.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="alignCenter marginTop">
+        <div className="setWidth footer-logo-sec">
+          <img className="footer-logo" src="https://framerusercontent.com/images/tgELERqZ0nObn14bTi418qTbg.png?scale-down-to=512" alt="" />
+          <ul className="options">
+            <li>Features</li>
+            <li>FAQ</li>
+            <li>Pricing</li>
+            <li>Testimonials</li>
+          </ul>
+        </div>
+      </div>
+      <div className="alignCenter marginTop">
+        <div className="setWidth">
+          <BreakLine backgroundColor="rgb(230, 230, 230)" />
+          <footer>
+            <p>&copy; 2024 ManageWise, Inc.</p>
+            <div>
+              <BiLogoInstagramAlt className="footer-social" />
+              <FaSquareXTwitter className="footer-social" />
+              <FaLinkedinIn className="footer-social" />
+            </div>
+          </footer>
         </div>
       </div>
     </div>
