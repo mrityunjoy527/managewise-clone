@@ -7,7 +7,7 @@ function PricingTab(props) {
   return (
     <div
       key={index}
-      className="all-pricing"
+      className={`all-pricing ${props.animation}`}
       style={{
         backgroundColor: index === 1 ? "rgb(28, 28, 28)" : "null",
         borderTop: index === 1 ? "20px solid rgb(28, 28, 28)" : "null",

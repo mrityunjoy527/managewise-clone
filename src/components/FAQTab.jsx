@@ -7,7 +7,7 @@ function FAQTab(props) {
 
 
   return (
-    <div onClick={() => setExpand((prev) => !prev)} key={props.idx} className="faq">
+    <div onClick={() => setExpand((prev) => !prev)} key={props.idx} className="faq slideUpButtonAnimation">
       <div className="faq-head">
         <h3 style={{ color: expanded ? "rgb(130, 71, 255)" : "black",}}>
           {props.question}

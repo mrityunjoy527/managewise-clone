@@ -1,6 +1,6 @@
 function Card3(props) {
   return (
-    <div className="card3">
+    <div className={`card3 ${props.animation}`}>
       {props.bell}
       <h4>{props.title}</h4>
       <p>{props.para}</p>

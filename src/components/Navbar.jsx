@@ -13,13 +13,13 @@ function Navbar() {
         <div id="navbar-rhs">
           <div id="options">
             <ul>
-              <li>Features</li>
+              <a href="#features"><li>Features</li></a>
               <div className="dot"></div>
-              <li>FAQ</li>
+              <a href="#faq"><li>FAQ</li></a>
               <div className="dot"></div>
-              <li>Pricing</li>
+              <a href="#pricing"><li>Pricing</li></a>
               <div className="dot"></div>
-              <li>Testimonials</li>
+              <a href="#testimonials"><li>Testimonials</li></a>
             </ul>
           </div>
           <BuyTemplateBtn text="Buy Template"/>

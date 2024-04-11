@@ -1,7 +1,7 @@
 function LogoTab(props) {
   return (
     <div
-      // key={props.idx}
+      key={props.idx}
       className="logo"
       style={{
         justifyContent: props.idx % 2 === Number(props.num) ? "start" : "end",

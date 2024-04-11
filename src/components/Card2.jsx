@@ -1,6 +1,6 @@
 function Card2(props) {
   return (
-    <div id="smart-task2">
+    <div className={props.animation} id="smart-task2">
       <img id="smart-task-image2" src={props.image} alt="" />
       <div>
         <h4 className="smart-task-title2">{props.title}</h4>

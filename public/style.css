@@ -3,10 +3,17 @@
   padding: 0px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: sans-serif;
   background: linear-gradient(
     rgb(253, 242, 236),
+    white,
+    white,
+    white,
     white,
     white,
     white,
@@ -37,6 +44,10 @@ body {
   height: 4px;
   width: 4px;
   background-color: rgb(196, 196, 196);
+}
+
+#options a {
+  text-decoration: none;
 }
 
 #options li {
@@ -270,7 +281,7 @@ body {
   font-size: 2.5rem;
   line-height: 50px;
   margin-bottom: 50px;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 .section3-icon {
@@ -280,6 +291,7 @@ body {
   font-size: 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -589,7 +601,7 @@ body {
 .faces-tab {
   display: flex;
   width: 80%;
-  height: 450px;
+  height: 500px;
 }
 
 .faces-tab-design {
@@ -657,27 +669,201 @@ body {
 }
 
 .options li {
-    list-style: none;
-    margin-top: 13px;
-    cursor: pointer;
+  list-style: none;
+  margin-top: 13px;
+  cursor: pointer;
 }
 
 .options li:hover {
-    color: #818181;
+  color: #818181;
 }
 
 footer {
-    display: flex;
-    justify-content: space-between;
-    margin: 40px 0px;
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0px;
 }
 
 .footer-social {
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
 }
 
 footer > div {
-    display: flex;
-    gap: 17px;
+  display: flex;
+  gap: 17px;
+}
+
+.customers-blur {
+  width: 100%;
+  z-index: 1;
+}
+
+.customers {
+  z-index: -1;
+  position: relative;
+  top: -600px;
+  width: 195%;
+  gap: 20px;
+  display: flex;
+  align-items: start;
+  margin-left: -1480px;
+  animation-name: anim;
+  animation-duration: 50s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes anim {
+  100% {
+    margin-left: 12px;
+  }
+}
+
+.card4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  width: 300px;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  border: 1px solid rgb(240, 240, 240);
+  gap: 40px;
+  padding: 50px 30px;
+}
+
+.card4-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.card4 > p {
+  font-size: 23px;
+}
+
+.card4-bottom img {
+  width: 60px;
+}
+
+.card4-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.card4-details p:first-child {
+  font-size: 20px;
+}
+
+.card4-details p:nth-child(2) {
+  color: rgb(108, 108, 108);
+}
+
+.slideUpAnimation {
+  position: relative;
+  animation-name: slideUpAnimation;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: var(1);
+  animation-delay: 0.7s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+
+.slideUpButtonAnimation {
+  position: relative;
+  animation-name: slideUpAnimation;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: var(1);
+}
+
+@keyframes slideUpButtonAnimation {
+  0% {
+    top: 20px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes slideUpAnimation {
+  0% {
+    opacity: 0;
+    top: 20px;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+.slideUp1 {
+  position: relative;
+  animation-name: slideUpAnimation;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: var(1);
+  animation-delay: 0.7s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+
+.slideUp2 {
+  position: relative;
+  animation-name: slideUpAnimation;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: var(1);
+  animation-delay: 0.9s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+
+.slideUp3 {
+  position: relative;
+  animation-name: slideUpAnimation;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: var(1);
+  animation-delay: 1.1s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+
+.drop {
+  transform: perspective(1000px) rotateX(-30deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  animation-name: drop;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: var(1);
+  animation-delay: 0.7s;
+  animation-fill-mode: forwards;
+  -webkit-transform: rotateX(60deg);
+  -moz-transform: perspective(1000px) rotateX(-30deg);
+  -ms-transform: perspective(1000px) rotateX(-30deg);
+  -o-transform: perspective(1000px) rotateX(-30deg);
+  -webkit-transform: perspective(1000px) rotateX(-30deg);
+}
+
+@keyframes drop {
+  100% {
+    transform: perspective(1000px) rotateX(0deg);
+    -webkit-transform: perspective(1000px) rotateX(0deg);
+    -moz-transform: perspective(1000px) rotateX(0deg);
+    -ms-transform: perspective(1000px) rotateX(0deg);
+    -o-transform: perspective(1000px) rotateX(0deg);
+  }
 }
