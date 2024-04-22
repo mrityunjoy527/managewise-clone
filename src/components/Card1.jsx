@@ -6,7 +6,7 @@ function Card1(props) {
         src={props.image}
         alt=""
       />
-      <div>
+      <div className="smart-task-desc">
         <h4 className="smart-task-title">{props.title}</h4>
         <p className="smart-task-subtitle">
           {props.subtitle}

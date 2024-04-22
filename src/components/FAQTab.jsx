@@ -7,9 +7,11 @@ function FAQTab(props) {
 
 
   return (
-    <div onClick={() => setExpand((prev) => !prev)} key={props.idx} className="faq slideUpButtonAnimation">
-      <div className="faq-head">
-        <h3 style={{ color: expanded ? "rgb(130, 71, 255)" : "black",}}>
+    <div style={{maxHeight: expanded? "200px": "100px"}} key={props.idx} className={`faq slideUpButtonAnimation`}>
+      <div onClick={() => {
+        setExpand((prev) => !prev);
+      }} className="faq-head">
+        <h3 style={{ color: expanded ? "rgb(130, 71, 255)" : "black", }}>
           {props.question}
         </h3>
         {expanded ? (
@@ -18,7 +20,7 @@ function FAQTab(props) {
           <GoPlus className="faq-icon" />
         )}
       </div>
-      {expanded && <p>{props.ans}</p>}
+      <p style={{visibility: expanded? "visible": "hidden"}}>{props.ans}</p>
     </div>
   );
 }

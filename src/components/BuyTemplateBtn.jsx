@@ -7,7 +7,7 @@ function BuyTemplateBtn(props) {
         border: props.border,
         color: props.textColor,
       }}
-      className={`buy-template-btn ${props.hover}`}
+      className={`buy-template-btn ${props.classes} ${props.hover} ${props.classes}`}
       type="button"
       value={props.text}
     />

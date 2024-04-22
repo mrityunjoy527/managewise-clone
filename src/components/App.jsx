@@ -47,11 +47,11 @@ function App() {
     });
     observer1.observe(myRef1.current);
 
-    const observer2 = new IntersectionObserver(entries => {
-      const entry = entries[0];
-      setOnScreen2(entry.isIntersecting);
-    });
-    observer2.observe(myRef2.current);
+    // const observer2 = new IntersectionObserver(entries => {
+    //   const entry = entries[0];
+    //   setOnScreen2(entry.isIntersecting);
+    // });
+    // observer2.observe(myRef2.current);
 
   }, []);
 
@@ -69,47 +69,58 @@ function App() {
     <div>
       <Navbar />
       <BreakLine backgroundColor="rgb(230, 230, 230)" />
-      <Section1
-        alignCenter="alignCenter"
-        text="Empower your business with"
-        textAnimation="slideUpAnimation"
-        highlight="Strategic"
-        text2="insights"
-        subtext="Powerful management platform designed to streamline your business
-        operations, boost productivity, and drive success"
-        subtextAnimation="slideUpAnimation"
-        tabText="WELCOME TO MANAGE WISE!"
-        icon="👋"
-        tabAnimation="slideUpAnimation"
-        textSize="70"
-        buttonAnimation="slideUpButtonAnimation"
-      />
-      <div ref={myRef1} style={{ height: "750px" }}>
-        <Section2
-          image="https://framerusercontent.com/images/t9qCSNfZSNdBCMSiohCGNEIl4.jpg?scale-down-to=2048"
-          scaledWidth="1300px"
-          width="1200px"
-          onScreen={onScreen1}
-          animation="drop"
-        />
-      </div>
-      <Section1
-        id="features"
-        alignCenter="alignCenter"
-        height="300px"
-        btn1="none"
-        btn2="none"
-        textSize="50"
-        textAnimation="slideUpButtonAnimation"
-        text="Discover our product's"
-        highlight="Capabilities"
-        subtext="Don't settle for mediocrity - embrace the future of management with Manage Wise."
-        tabText="PREMIER FEATURES"
-        icon="🔥"
-        paraWidth="50%"
-      />
-      <Section3 />
+      <div className="marginTop"></div>
       <div className="alignCenter">
+        <div className="setWidth">
+          <Section1
+            titleText="section1-title"
+            paraText="section1-para"
+            alignCenter="alignCenter"
+            text="Empower your business with"
+            textAnimation="slideUpAnimation"
+            highlight="Strategic"
+            text2="insights"
+            subtext="Powerful management platform designed to streamline your business
+        operations, boost productivity, and drive success"
+            subtextAnimation="slideUpAnimation"
+            tabText="WELCOME TO MANAGE WISE!"
+            icon="👋"
+            paraWidth="36em"
+            tabAnimation="slideUpAnimation"
+            buttonAnimation="slideUpButtonAnimation"
+          />
+          <div className="alignCenter" style={{width: "100%"}}>
+            <div ref={myRef1} style={{marginTop: "40px"}}>
+              <Section2
+                image="https://framerusercontent.com/images/t9qCSNfZSNdBCMSiohCGNEIl4.jpg?scale-down-to=2048"
+                class="hero-photo"
+                onScreen={onScreen1}
+                animation="drop"
+                borderRadius="3.4%"
+                divHeight="fit-content"
+                boxShadow="rgba(50, 50, 93, 0.25) 0px 50px 75px -40px"
+              />
+            </div>
+          </div>
+          <Section1
+            titleText="section1-title2"
+            paraText="section1-para2"
+            id="features"
+            marginTop="140px"
+            alignCenter="alignCenter"
+            btn1="none"
+            btn2="none"
+            textAnimation="slideUpButtonAnimation"
+            text="Discover our product's"
+            highlight="Capabilities"
+            subtext="Don't settle for mediocrity - embrace the future of management with Manage Wise."
+            tabText="PREMIER FEATURES"
+            icon="🔥"
+          />
+          <Section3 />
+        </div>
+      </div>
+      <div className="alignCenter set-bg">
         <div className="set-bg">
           <Section1
             alignCenter="alignCenter"
@@ -154,44 +165,47 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="set-bg alignCenter">
-        <div className="display-row2">
-          <div ref={myRef2} className="marginTop">{leftLogos.map(logoTabLeft)}</div>
-          <div>
-            <Section1
-              fontColor="white"
-              align="center"
-              alignCenter="alignCenter"
-              width="70%"
-              height="400px"
-              btn1="none"
-              btn2="none"
-              textSize="50"
-              text="Enable"
-              textAnimation="slideUpAnimation"
-              highlight="integration"
-              text2="with other popular tools and platforms"
-              subtext="Seamlessly connect and amplify your workflow by enabling integration with a diverse array of widely-used tools and platforms."
-              tabText="INTEGRATIONS"
-              icon="🛠"
-              paraWidth="75%"
-              marginTop="10rem"
-            />
-            <Section2
-              width="70%"
-              radius="0px"
-              marginBottom="-15px"
-              image="https://framerusercontent.com/images/sQd7MkwgkdQRRQ1a99k5Z1zLfA.png"
-              animation="slideUpAnimation"
-            />
+      {/* <div className="alignCenter set-bg">
+        <div className="set-bg alignCenter setWidth">
+          <div className="display-row2">
+            <div ref={myRef2} className="marginTop">{leftLogos.map(logoTabLeft)}</div>
+            <div>
+              <Section1
+                fontColor="white"
+                align="center"
+                alignCenter="alignCenter"
+                width="70%"
+                height="400px"
+                btn1="none"
+                btn2="none"
+                textSize="50"
+                text="Enable"
+                textAnimation="slideUpAnimation"
+                highlight="integration"
+                text2="with other popular tools and platforms"
+                subtext="Seamlessly connect and amplify your workflow by enabling integration with a diverse array of widely-used tools and platforms."
+                tabText="INTEGRATIONS"
+                icon="🛠"
+                paraWidth="75%"
+                marginTop="10rem"
+              />
+              <Section2
+                width="70%"
+                radius="0px"
+                marginBottom="-15px"
+                image="https://framerusercontent.com/images/sQd7MkwgkdQRRQ1a99k5Z1zLfA.png"
+                animation="slideUpAnimation"
+                borderRadius="0px"
+              />
+            </div>
+            <div ref={myRef2} className="marginTop">{rightLogos.map(logoTabRight)}</div>
           </div>
-          <div ref={myRef2} className="marginTop">{rightLogos.map(logoTabRight)}</div>
         </div>
-      </div>
+      </div> */}
       <BreakLine id="faq" backgroundColor="black" />
-      <div className="alignCenter marginTop">
-        <div className="setWidth">
-          <div className="faq-display-row">
+      {/* <div className="alignCenter marginTop">
+        <div className="setWidth alignCenter">
+          <div className="faq-display-row setWidth">
             <Section1
               fontColor="black"
               align="start"
@@ -212,8 +226,8 @@ function App() {
             <div>{faqs.map(showFAQ)}</div>
           </div>
         </div>
-      </div>
-      <div className="alignCenter marginTop">
+      </div> */}
+      {/* <div className="alignCenter marginTop">
         <div className="setWidth">
           <Section1
             id="pricing"
@@ -233,101 +247,115 @@ function App() {
             icon="💲"
             paraWidth="40%"
           />
-          <div className="display-row">
-            {pricing.map((e, idx) => (
-              <PricingTab
-                idx={idx}
-                animation={`slideUp${idx + 1}`}
-                text={e.quality}
-                price={e.price}
-                benefits={e.benefits}
-              />
-            ))}
+          <div className="alignCenter">
+            <div className="display-row setWidth">
+              {pricing.map((e, idx) => (
+                <PricingTab
+                  idx={idx}
+                  animation={`slideUp${idx + 1}`}
+                  text={e.quality}
+                  price={e.price}
+                  benefits={e.benefits}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="alignCenter marginTop">
-        <div className="setWidth">
-          <Section1
-            id="testimonials"
-            align="start"
-            btn1="none"
-            btn2="none"
-            textSize="50"
-            height="200px"
-            text="Hear from our"
-            highlight="Satisfied"
-            text2="clients"
-            textAnimation="slideUpAnimation"
-            subtext="Discover why our clients love working with us. Read their testimonials and learn how we has helped businesses."
-            tabText="TESTIMONIALS"
-            icon="🧡"
-            paraWidth="60%"
-            divWidth="100%"
-          />
-        </div>
-      </div>
-      <div style={{ overflow: "hidden" }}>
-        <img className="customers-blur" src="https://framerusercontent.com/images/584hzJDnWCS5SFABKjaCzgDspY.png" alt="" />
-        <div className="display-row marginTop customers">
-          {customers.map((cus, id) => <Card4 id={id} customer={cus} />)}
-        </div>
-      </div>
-      <div style={{marginTop: "-460px"}} className="alignCenter">
-        <div className="setWidth alignCenter faces-tab-design drop">
-          <div className="faces-tab">
+      </div> */}
+      {/* <div className="alignCenter marginTop">
+        <div className="setWidth alignCenter ">
+          <div className="setWidth">
             <Section1
+              id="testimonials"
               align="start"
+              btn1="none"
               btn2="none"
               textSize="50"
-              height="370px"
-              width="76%"
-              btnText="Try out now"
-              text="Unleash your "
-              highlight="Potential"
+              height="200px"
+              text="Hear from our"
+              highlight="Satisfied"
+              text2="clients"
               textAnimation="slideUpAnimation"
-              text2="with us"
-              subtext="Join our community of ambitious individuals and organizations eager to make a difference."
-              tabText="DON'T MISS OUT"
-              icon="👋"
-              paraWidth="100%"
+              subtext="Discover why our clients love working with us. Read their testimonials and learn how we has helped businesses."
+              tabText="TESTIMONIALS"
+              icon="🧡"
+              paraWidth="60%"
               divWidth="100%"
             />
-            <div className="happy-faces">
-              <div className="happy">
-                <h2>200+</h2>
-                <h2>Happy users</h2>
+            <div style={{ overflow: "hidden" }}>
+              <img className="customers-blur" src="https://framerusercontent.com/images/584hzJDnWCS5SFABKjaCzgDspY.png" alt="" />
+              <div className="display-row marginTop customers">
+                {customers.map((cus, id) => <Card4 id={id} customer={cus} />)}
               </div>
-              <img className="blur" src="https://framerusercontent.com/images/584hzJDnWCS5SFABKjaCzgDspY.png" alt="" />
-              <img className="faces" src="https://framerusercontent.com/images/S4kVG1FFzSqxr8zOqpvJRfsBad0.png" alt="" />
             </div>
           </div>
         </div>
-      </div>
-      <div className="alignCenter marginTop">
-        <div className="setWidth footer-logo-sec">
-          <img className="footer-logo" src="https://framerusercontent.com/images/tgELERqZ0nObn14bTi418qTbg.png?scale-down-to=512" alt="" />
-          <ul className="options">
-            <li>Features</li>
-            <li>FAQ</li>
-            <li>Pricing</li>
-            <li>Testimonials</li>
-          </ul>
-        </div>
-      </div>
-      <div className="alignCenter marginTop">
+      </div> */}
+      {/* <div className="alignCenter">
         <div className="setWidth">
-          <BreakLine backgroundColor="rgb(230, 230, 230)" />
-          <footer>
-            <p>&copy; 2024 ManageWise, Inc.</p>
-            <div>
-              <BiLogoInstagramAlt className="footer-social" />
-              <FaSquareXTwitter className="footer-social" />
-              <FaLinkedinIn className="footer-social" />
+          <div style={{ marginTop: "-460px" }} className="alignCenter">
+            <div className="setWidth alignCenter faces-tab-design drop">
+              <div className="faces-tab">
+                <Section1
+                  align="start"
+                  btn2="none"
+                  textSize="50"
+                  height="370px"
+                  width="76%"
+                  btnText="Try out now"
+                  text="Unleash your "
+                  highlight="Potential"
+                  textAnimation="slideUpAnimation"
+                  text2="with us"
+                  subtext="Join our community of ambitious individuals and organizations eager to make a difference."
+                  tabText="DON'T MISS OUT"
+                  icon="👋"
+                  paraWidth="100%"
+                  divWidth="100%"
+                />
+                <div className="happy-faces">
+                  <div className="happy">
+                    <h2>200+</h2>
+                    <h2>Happy users</h2>
+                  </div>
+                  <img className="blur" src="https://framerusercontent.com/images/584hzJDnWCS5SFABKjaCzgDspY.png" alt="" />
+                  <img className="faces" src="https://framerusercontent.com/images/S4kVG1FFzSqxr8zOqpvJRfsBad0.png" alt="" />
+                </div>
+              </div>
             </div>
-          </footer>
+          </div>
         </div>
-      </div>
+      </div> */}
+      {/* <div className="alignCenter">
+        <div className="setWidth">
+
+
+          <div className="alignCenter marginTop">
+            <div className="setWidth footer-logo-sec">
+              <img className="footer-logo" src="https://framerusercontent.com/images/tgELERqZ0nObn14bTi418qTbg.png?scale-down-to=512" alt="" />
+              <ul className="options">
+                <li>Features</li>
+                <li>FAQ</li>
+                <li>Pricing</li>
+                <li>Testimonials</li>
+              </ul>
+            </div>
+          </div>
+          <div className="alignCenter marginTop">
+            <div className="setWidth">
+              <BreakLine backgroundColor="rgb(230, 230, 230)" />
+              <footer>
+                <p>&copy; 2024 ManageWise, Inc.</p>
+                <div>
+                  <BiLogoInstagramAlt className="footer-social" />
+                  <FaSquareXTwitter className="footer-social" />
+                  <FaLinkedinIn className="footer-social" />
+                </div>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div> */}
     </div>
   );
 }
