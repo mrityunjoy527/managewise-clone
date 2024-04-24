@@ -19,6 +19,8 @@ import customers from "../customers";
 import Section3 from "./Section3";
 import { useEffect, useState } from "react";
 import { useRef } from "react";
+import Section4 from "./Section4";
+import Logos from "./Logos";
 
 
 function App() {
@@ -27,6 +29,12 @@ function App() {
     const { question, ans } = q;
     return <FAQTab idx={idx} question={question} ans={ans} />;
   }
+
+  const [width, setWidth] = useState(window.innerWidth);
+
+  window.addEventListener("resize", () => {
+    setWidth(window.innerWidth);
+  });
 
   const myRef1 = useRef();
   const myRef2 = useRef();
@@ -70,7 +78,7 @@ function App() {
       <Navbar />
       <BreakLine backgroundColor="rgb(230, 230, 230)" />
       <div className="marginTop"></div>
-      <div className="alignCenter">
+      <div style={{padding: "0px 20px"}} className="alignCenter">
         <div className="setWidth">
           <Section1
             titleText="section1-title"
@@ -89,8 +97,8 @@ function App() {
             tabAnimation="slideUpAnimation"
             buttonAnimation="slideUpButtonAnimation"
           />
-          <div className="alignCenter" style={{width: "100%"}}>
-            <div ref={myRef1} style={{marginTop: "40px"}}>
+          <div className="alignCenter" style={{ width: "100%" }}>
+            <div ref={myRef1} style={{ marginTop: "40px" }}>
               <Section2
                 image="https://framerusercontent.com/images/t9qCSNfZSNdBCMSiohCGNEIl4.jpg?scale-down-to=2048"
                 class="hero-photo"
@@ -120,90 +128,75 @@ function App() {
           <Section3 />
         </div>
       </div>
-      <div className="alignCenter set-bg">
-        <div className="set-bg">
-          <Section1
-            alignCenter="alignCenter"
-            fontColor="white"
-            align="start"
-            height="300px"
-            btn1="none"
-            btn2="none"
-            textAnimation="slideUpAnimation"
-            textSize="50"
-            text="Explore an array of features that elevate your "
-            highlight="Productivity"
-            text2="to new heights"
-            subtext="Discover the tools that will revolutionize the way you manage and optimize your operations"
-            tabText="AND MORE..."
-            icon="🤩"
-            paraWidth="45%"
-          />
-          <div className="alignCenter">
-            <div className="setWidth">
-              <div className="display-row">
-                <Card3
-                  animation="slideUp1"
-                  bell={<BsFillPhoneFill className="purple-bg" />}
-                  title="Cross-Platform Compatibility"
-                  para="Enjoy the flexibility of cross-platform compatibility. Our product works seamlessly across desktop, web, and mobile devices, allowing you to work from your preferred device."
-                />
-                <Card3
-                  animation="slideUp2"
-                  bell={<HiBell className="purple-bg" />}
-                  title="Stay Informed with Essential Notifications"
-                  para="Automate support from first customer contact to closing the ticket. Drastically improve time to resolution.Automate support from first customer contact to closing the ticket."
-                />
-                <Card3
-                  animation="slideUp3"
-                  bell={<HiFire className="purple-bg" />}
-                  title="Secure Data Encryption at all times"
-                  para="Trust in our robust data encryption to keep your sensitive information safe and secure. Rest easy knowing your data is protected at all times."
-                />
-              </div>
+      <div style={{ padding: "0px 20px", marginBottom: "-16px" }} className="set-bg alignCenter">
+        <div style={{ margin: "0 7em"}} className="set-bg setWidth">
+          <div className="set-bg">
+            <Section1
+              titleText="section1-title2"
+              paraText="section1-para2"
+              alignCenter="alignCenter"
+              fontColor="white"
+              align="start"
+              btn1="none"
+              btn2="none"
+              textAnimation="slideUpAnimation"
+              text="Explore an array of features that elevate your "
+              highlight="Productivity"
+              text2="to new heights"
+              subtext="Discover the tools that will revolutionize the way you manage and optimize your operations"
+              tabText="AND MORE..."
+              icon="🤩"
+              paraWidth="26em"
+            />
+            <div className="display-row">
+              <Card3
+                animation="slideUp1"
+                bell={<BsFillPhoneFill className="purple-bg" />}
+                title="Cross-Platform Compatibility"
+                para="Enjoy the flexibility of cross-platform compatibility. Our product works seamlessly across desktop, web, and mobile devices, allowing you to work from your preferred device."
+              />
+              <Card3
+                animation="slideUp2"
+                bell={<HiBell className="purple-bg" />}
+                title="Stay Informed with Essential Notifications"
+                para="Automate support from first customer contact to closing the ticket. Drastically improve time to resolution.Automate support from first customer contact to closing the ticket."
+              />
+              <Card3
+                animation="slideUp3"
+                bell={<HiFire className="purple-bg" />}
+                title="Secure Data Encryption at all times"
+                para="Trust in our robust data encryption to keep your sensitive information safe and secure. Rest easy knowing your data is protected at all times."
+              />
             </div>
           </div>
+        </div>
+        <div className="logos-with-section1 marginTop">
+          {width > 1399 && <div ref={myRef2} className="">{leftLogos.map(logoTabLeft)}</div>}
+          <div style={{ maxWidth: "600px", display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center" }} className="">
+            {width <= 1399 && <Logos/>}
+            <Section1
+              titleText="section1-title2"
+              paraText="section1-para2"
+              fontColor="white"
+              alignCenter="alignCenter"
+              btn1="none"
+              btn2="none"
+              text="Enable"
+              textAnimation="slideUpAnimation"
+              highlight="integration"
+              text2="with other popular tools and platforms"
+              subtext="Seamlessly connect and amplify your workflow by enabling integration with a diverse array of widely-used tools and platforms."
+              tabText="INTEGRATIONS"
+              icon="🛠"
+              marginTop="4em"
+            />
+            <Section4 />
+          </div>
+          {width > 1399 && <div ref={myRef2} className="">{rightLogos.map(logoTabRight)}</div>}
         </div>
       </div>
-      {/* <div className="alignCenter set-bg">
-        <div className="set-bg alignCenter setWidth">
-          <div className="display-row2">
-            <div ref={myRef2} className="marginTop">{leftLogos.map(logoTabLeft)}</div>
-            <div>
-              <Section1
-                fontColor="white"
-                align="center"
-                alignCenter="alignCenter"
-                width="70%"
-                height="400px"
-                btn1="none"
-                btn2="none"
-                textSize="50"
-                text="Enable"
-                textAnimation="slideUpAnimation"
-                highlight="integration"
-                text2="with other popular tools and platforms"
-                subtext="Seamlessly connect and amplify your workflow by enabling integration with a diverse array of widely-used tools and platforms."
-                tabText="INTEGRATIONS"
-                icon="🛠"
-                paraWidth="75%"
-                marginTop="10rem"
-              />
-              <Section2
-                width="70%"
-                radius="0px"
-                marginBottom="-15px"
-                image="https://framerusercontent.com/images/sQd7MkwgkdQRRQ1a99k5Z1zLfA.png"
-                animation="slideUpAnimation"
-                borderRadius="0px"
-              />
-            </div>
-            <div ref={myRef2} className="marginTop">{rightLogos.map(logoTabRight)}</div>
-          </div>
-        </div>
-      </div> */}
       <BreakLine id="faq" backgroundColor="black" />
-      {/* <div className="alignCenter marginTop">
+      <div className="alignCenter marginTop">
         <div className="setWidth alignCenter">
           <div className="faq-display-row setWidth">
             <Section1
@@ -226,7 +219,7 @@ function App() {
             <div>{faqs.map(showFAQ)}</div>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* <div className="alignCenter marginTop">
         <div className="setWidth">
           <Section1
