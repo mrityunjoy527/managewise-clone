@@ -1044,6 +1044,7 @@ footer > div {
   width: fit-content;
   gap: 20px;
   display: flex;
+  justify-content: center;
   align-items: start;
   margin-left: -104%;
   animation-name: anim;
@@ -1054,12 +1055,6 @@ footer > div {
 
 .customer-section {
   width: 1230px;
-}
-
-.customer-outer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 @keyframes anim {

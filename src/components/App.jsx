@@ -277,7 +277,7 @@ function App() {
         <div style={{ width: "1400px" }} className=" customer-section">
           <div style={{ overflow: "hidden" }}>
             <img className="customers-blur" src="https://framerusercontent.com/images/584hzJDnWCS5SFABKjaCzgDspY.png" alt="" />
-            <div className="marginTop customers customer-outer">
+            <div className="marginTop customers">
               {customers.map((cus, id) => <Card4 id={id} customer={cus} />)}
             </div>
           </div>
