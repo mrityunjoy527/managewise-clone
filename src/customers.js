@@ -47,6 +47,12 @@ const customers = [
         name: "David",
         designation: "Freelancer"
     },
+    {
+        feedback: "The customer support team behind this product is exceptional. They have been incredibly responsive and helpful, addressing any questions or concerns promptly.",
+        imgUrl: "https://framerusercontent.com/images/OOtXrjMtLK5Xx3QTQXHynwpqYi4.jpg",
+        name: "Sarah",
+        designation: "Project Manager"
+    },
 ];
 
 export default customers;
