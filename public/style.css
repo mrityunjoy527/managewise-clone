@@ -1041,11 +1041,11 @@ footer > div {
   z-index: -1;
   position: relative;
   top: -600px;
-  width: 220%;
+  width: fit-content;
   gap: 20px;
   display: flex;
   align-items: start;
-  margin-left: -1480px;
+  margin-left: -104%;
   animation-name: anim;
   animation-duration: 50s;
   animation-iteration-count: infinite;
@@ -1064,7 +1064,7 @@ footer > div {
 
 @keyframes anim {
   100% {
-    margin-left: 12px;
+    margin-left: 5%;
   }
 }
 

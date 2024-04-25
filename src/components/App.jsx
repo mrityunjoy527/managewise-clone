@@ -39,7 +39,7 @@ function App() {
   const myRef1 = useRef();
   const myRef2 = useRef();
   const [onScreen1, setOnScreen1] = useState(false);
-  const [onScreen2, setOnScreen2] = useState(false);
+  // const [onScreen2, setOnScreen2] = useState(false);
 
   useEffect(() => {
 
@@ -50,26 +50,26 @@ function App() {
 
     const observer1 = new IntersectionObserver(entries => {
       const entry = entries[0];
-      console.log(entry);
+      // console.log(entry);
       setOnScreen1(entry.isIntersecting);
     });
     observer1.observe(myRef1.current);
 
-    const observer2 = new IntersectionObserver(entries => {
-      const entry = entries[0];
-      setOnScreen2(entry.isIntersecting);
-    });
-    observer2.observe(myRef2.current);
+    // const observer2 = new IntersectionObserver(entries => {
+    //   const entry = entries[0];
+    //   setOnScreen2(entry.isIntersecting);
+    // });
+    // observer2.observe(myRef2.current);
 
   }, []);
 
 
   function logoTabLeft(logo, idx) {
-    return <LogoTab onScreen={onScreen2} logo={logo} idx={idx} num="0" />;
+    return <LogoTab  logo={logo} idx={idx} num="0" />;
   }
 
   function logoTabRight(logo, idx) {
-    return <LogoTab onScreen={onScreen2} logo={logo} idx={idx} num="1" />;
+    return <LogoTab  logo={logo} idx={idx} num="1" />;
   }
 
 
