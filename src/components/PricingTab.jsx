@@ -10,9 +10,8 @@ function PricingTab(props) {
       className={`all-pricing ${props.animation}`}
       style={{
         backgroundColor: index === 1 ? "rgb(28, 28, 28)" : "null",
-        borderTop: index === 1 ? "20px solid rgb(28, 28, 28)" : "null",
-      }}
-    >
+        height: index === 1? "520px": "500px",
+      }}>
       <div className="rent-price">
         <Tab color="rgb(254, 129, 98)" text={props.text}></Tab>
         <div className="per-month-price">
@@ -31,8 +30,7 @@ function PricingTab(props) {
                 style={{
                   fontWeight: "bold",
                   color: "rgb(142, 142, 142)",
-                }}
-              >
+                }}>
                 {e}
               </p>
             </div>
@@ -43,6 +41,7 @@ function PricingTab(props) {
         hover={index === 1 ? "get-started-hover" : null}
         color={index === 1 ? "rgb(130, 71, 255)" : null}
         marginLeft="0px"
+        class="bg-color"
         border={index === 1? "none": null}
         text="Get Started"
         textColor={index === 1? "white": "black"}

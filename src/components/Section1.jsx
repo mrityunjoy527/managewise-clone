@@ -4,7 +4,7 @@ import WatchDemoBtn from "./WatchDemoBtn";
 
 function Section1(props) {
   return (
-    <div id={props.id} className={` ${props.alignCenter} section1-outer`} style={{ marginTop: props.marginTop, maxWidth: props.divWidth}}>
+    <div id={props.id} className={` ${props.alignCenter} section1-outer ${props.class}`} style={{ marginTop: props.marginTop, maxWidth: props.divWidth}}>
       <div className="" style={{ maxWidth: props.width }}>
         <div
           style={{ height: props.height, alignItems: props.align }}

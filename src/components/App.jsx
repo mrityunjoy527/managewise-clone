@@ -55,11 +55,11 @@ function App() {
     });
     observer1.observe(myRef1.current);
 
-    // const observer2 = new IntersectionObserver(entries => {
-    //   const entry = entries[0];
-    //   setOnScreen2(entry.isIntersecting);
-    // });
-    // observer2.observe(myRef2.current);
+    const observer2 = new IntersectionObserver(entries => {
+      const entry = entries[0];
+      setOnScreen2(entry.isIntersecting);
+    });
+    observer2.observe(myRef2.current);
 
   }, []);
 
@@ -78,7 +78,7 @@ function App() {
       <Navbar />
       <BreakLine backgroundColor="rgb(230, 230, 230)" />
       <div className="marginTop"></div>
-      <div style={{padding: "0px 20px"}} className="alignCenter">
+      <div className="alignCenter simple-padding">
         <div className="setWidth">
           <Section1
             titleText="section1-title"
@@ -89,7 +89,7 @@ function App() {
             highlight="Strategic"
             text2="insights"
             subtext="Powerful management platform designed to streamline your business
-        operations, boost productivity, and drive success"
+            operations, boost productivity, and drive success"
             subtextAnimation="slideUpAnimation"
             tabText="WELCOME TO MANAGE WISE!"
             icon="👋"
@@ -98,7 +98,7 @@ function App() {
             buttonAnimation="slideUpButtonAnimation"
           />
           <div className="alignCenter" style={{ width: "100%" }}>
-            <div ref={myRef1} style={{ marginTop: "40px" }}>
+            <div ref={myRef1} style={{ marginTop: "23px" }}>
               <Section2
                 image="https://framerusercontent.com/images/t9qCSNfZSNdBCMSiohCGNEIl4.jpg?scale-down-to=2048"
                 class="hero-photo"
@@ -110,10 +110,13 @@ function App() {
               />
             </div>
           </div>
+        </div>
+      </div>
+      <div id="features" className="alignCenter simple-padding">
+        <div className=" setWidth">
           <Section1
             titleText="section1-title2"
             paraText="section1-para2"
-            id="features"
             marginTop="140px"
             alignCenter="alignCenter"
             btn1="none"
@@ -128,9 +131,9 @@ function App() {
           <Section3 />
         </div>
       </div>
-      <div style={{ padding: "0px 20px", marginBottom: "-16px" }} className="set-bg alignCenter">
-        <div style={{ margin: "0 7em"}} className="set-bg setWidth">
-          <div className="set-bg">
+      <div style={{ marginBottom: "-16px" }} className="set-bg alignCenter simple-padding">
+        <div className="set-bg setWidth">
+          <div className="set-bg marginTop">
             <Section1
               titleText="section1-title2"
               paraText="section1-para2"
@@ -173,7 +176,7 @@ function App() {
         <div className="logos-with-section1 marginTop">
           {width > 1399 && <div ref={myRef2} className="">{leftLogos.map(logoTabLeft)}</div>}
           <div style={{ maxWidth: "600px", display: "flex", flexDirection: "column", justifyContent: "space-between", alignItems: "center" }} className="">
-            {width <= 1399 && <Logos/>}
+            {width <= 1399 && <Logos />}
             <Section1
               titleText="section1-title2"
               paraText="section1-para2"
@@ -195,160 +198,146 @@ function App() {
           {width > 1399 && <div ref={myRef2} className="">{rightLogos.map(logoTabRight)}</div>}
         </div>
       </div>
-      <BreakLine id="faq" backgroundColor="black" />
-      <div className="alignCenter marginTop">
-        <div className="setWidth alignCenter">
-          <div className="faq-display-row setWidth">
+      <BreakLine backgroundColor="black" />
+      <div className="alignCenter simple-padding">
+        <div id="faq" className=" faq-section marginTop">
+          <div className="faq-display-row marginTop">
             <Section1
+              class="faq-section1"
+              titleText="section1-title2"
+              paraText="section1-para2"
               fontColor="black"
-              align="start"
-              width="100%"
-              height="300px"
+              align={width < 809 ? "center" : "start"}
+              divWidth="360px"
               btn1="none"
               btn2="none"
-              textSize="50"
               textAnimation="slideUpAnimation"
               text="Need"
               highlight="Answers?"
               subtext="Check out our most commonly asked questions below to find the information you need."
               tabText="FAQ"
               icon="🙋‍♀️"
-              paraWidth="75%"
-              divWidth="30%"
             />
-            <div>{faqs.map(showFAQ)}</div>
+            <div className="faq-section-ques">{faqs.map(showFAQ)}</div>
           </div>
         </div>
       </div>
-      {/* <div className="alignCenter marginTop">
-        <div className="setWidth">
+      <div id="pricing" className="alignCenter simple-padding">
+        <div className=" faq-section marginTop">
           <Section1
-            id="pricing"
+            titleText="section1-title2"
+            paraText="section1-para2"
             fontColor="black"
             align="center"
             width="100%"
-            height="300px"
             textAnimation="slideUpAnimation"
             btn1="none"
             btn2="none"
-            textSize="50"
             text="Select your ideal"
             text2="plan"
             highlight="Pricing"
             subtext="At Manage Wise, we believe in providing you with pricing plans that adapt to your unique needs."
             tabText="PRICING"
             icon="💲"
-            paraWidth="40%"
+            paraWidth={width > 1399 ? "40%" : "70%"}
           />
-          <div className="alignCenter">
-            <div className="display-row setWidth">
-              {pricing.map((e, idx) => (
-                <PricingTab
-                  idx={idx}
-                  animation={`slideUp${idx + 1}`}
-                  text={e.quality}
-                  price={e.price}
-                  benefits={e.benefits}
-                />
-              ))}
+          <div className="display-row setWidth">
+            {pricing.map((e, idx) => (
+              <PricingTab
+                idx={idx}
+                animation={`slideUp${idx + 1}`}
+                text={e.quality}
+                price={e.price}
+                benefits={e.benefits}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div id="testimonials" className="alignCenter simple-padding">
+        <div className=" faq-section marginTop">
+          <Section1
+            titleText="section1-title2"
+            paraText="section1-para2"
+            align="start"
+            btn1="none"
+            btn2="none"
+            text="Hear from our"
+            highlight="Satisfied"
+            text2="clients"
+            textAnimation="slideUpAnimation"
+            subtext="Discover why our clients love working with us. Read their testimonials and learn how we has helped businesses."
+            tabText="TESTIMONIALS"
+            icon="🧡"
+            paraWidth="28em"
+          />
+        </div>
+      </div>
+      <div style={{ overflow: "hidden" }} className="alignCenter simple-padding">
+        <div style={{ width: "1400px" }} className=" customer-section">
+          <div style={{ overflow: "hidden" }}>
+            <img className="customers-blur" src="https://framerusercontent.com/images/584hzJDnWCS5SFABKjaCzgDspY.png" alt="" />
+            <div className="marginTop customers customer-outer">
+              {customers.map((cus, id) => <Card4 id={id} customer={cus} />)}
             </div>
           </div>
         </div>
-      </div> */}
-      {/* <div className="alignCenter marginTop">
-        <div className="setWidth alignCenter ">
-          <div className="setWidth">
-            <Section1
-              id="testimonials"
-              align="start"
-              btn1="none"
-              btn2="none"
-              textSize="50"
-              height="200px"
-              text="Hear from our"
-              highlight="Satisfied"
-              text2="clients"
-              textAnimation="slideUpAnimation"
-              subtext="Discover why our clients love working with us. Read their testimonials and learn how we has helped businesses."
-              tabText="TESTIMONIALS"
-              icon="🧡"
-              paraWidth="60%"
-              divWidth="100%"
-            />
-            <div style={{ overflow: "hidden" }}>
-              <img className="customers-blur" src="https://framerusercontent.com/images/584hzJDnWCS5SFABKjaCzgDspY.png" alt="" />
-              <div className="display-row marginTop customers">
-                {customers.map((cus, id) => <Card4 id={id} customer={cus} />)}
+      </div>
+      <div style={{ marginTop: "-460px" }} className="alignCenter simple-padding">
+        <div style={{ overflow: "hidden" }} className="setWidth">
+          <div className="faces-tab-design drop">
+            <div className="faces-tab">
+              <Section1
+                class="faq-section1"
+                titleText="section1-title2"
+                paraText="section1-para2"
+                fontColor="black"
+                align={width < 1399 ? "center" : "start"}
+                btn2="none"
+                divWidth={width > 1399 ? "50%" : "80%"}
+                btnText="Try out now"
+                text="Unleash your "
+                highlight="Potential"
+                textAnimation="slideUpAnimation"
+                text2="with us"
+                subtext="Join our community of ambitious individuals and organizations eager to make a difference."
+                tabText="DON'T MISS OUT"
+                icon="👋"
+              />
+              <div className="happy-faces">
+                <div className="happy">
+                  <h2>200+</h2>
+                  <h2>Happy users</h2>
+                </div>
+                <img className="blur" src="https://framerusercontent.com/images/584hzJDnWCS5SFABKjaCzgDspY.png" alt="" />
+                <img className="faces" src="https://framerusercontent.com/images/S4kVG1FFzSqxr8zOqpvJRfsBad0.png" alt="" />
               </div>
             </div>
           </div>
         </div>
-      </div> */}
-      {/* <div className="alignCenter">
+      </div>
+      <div style={{ marginTop: "9em" }} className="alignCenter simple-padding">
         <div className="setWidth">
-          <div style={{ marginTop: "-460px" }} className="alignCenter">
-            <div className="setWidth alignCenter faces-tab-design drop">
-              <div className="faces-tab">
-                <Section1
-                  align="start"
-                  btn2="none"
-                  textSize="50"
-                  height="370px"
-                  width="76%"
-                  btnText="Try out now"
-                  text="Unleash your "
-                  highlight="Potential"
-                  textAnimation="slideUpAnimation"
-                  text2="with us"
-                  subtext="Join our community of ambitious individuals and organizations eager to make a difference."
-                  tabText="DON'T MISS OUT"
-                  icon="👋"
-                  paraWidth="100%"
-                  divWidth="100%"
-                />
-                <div className="happy-faces">
-                  <div className="happy">
-                    <h2>200+</h2>
-                    <h2>Happy users</h2>
-                  </div>
-                  <img className="blur" src="https://framerusercontent.com/images/584hzJDnWCS5SFABKjaCzgDspY.png" alt="" />
-                  <img className="faces" src="https://framerusercontent.com/images/S4kVG1FFzSqxr8zOqpvJRfsBad0.png" alt="" />
-                </div>
-              </div>
-            </div>
+          <div style={{ marginBottom: "7em" }} className="setWidth footer-logo-sec">
+            <img className="footer-logo" src="https://framerusercontent.com/images/tgELERqZ0nObn14bTi418qTbg.png?scale-down-to=512" alt="" />
+            <ul className="options">
+              <a href="#features"><li>Features</li></a>
+              <a href="#faq"><li>FAQ</li></a>
+              <a href="#pricing"><li>Pricing</li></a>
+              <a href="#testimonials"><li>Testimonials</li></a>
+            </ul>
           </div>
+          <BreakLine backgroundColor="rgb(230, 230, 230)" />
+          <footer>
+            <p>&copy; 2024 ManageWise, Inc.</p>
+            <div>
+              <BiLogoInstagramAlt className="footer-social" />
+              <FaSquareXTwitter className="footer-social" />
+              <FaLinkedinIn className="footer-social" />
+            </div>
+          </footer>
         </div>
-      </div> */}
-      {/* <div className="alignCenter">
-        <div className="setWidth">
-
-
-          <div className="alignCenter marginTop">
-            <div className="setWidth footer-logo-sec">
-              <img className="footer-logo" src="https://framerusercontent.com/images/tgELERqZ0nObn14bTi418qTbg.png?scale-down-to=512" alt="" />
-              <ul className="options">
-                <li>Features</li>
-                <li>FAQ</li>
-                <li>Pricing</li>
-                <li>Testimonials</li>
-              </ul>
-            </div>
-          </div>
-          <div className="alignCenter marginTop">
-            <div className="setWidth">
-              <BreakLine backgroundColor="rgb(230, 230, 230)" />
-              <footer>
-                <p>&copy; 2024 ManageWise, Inc.</p>
-                <div>
-                  <BiLogoInstagramAlt className="footer-social" />
-                  <FaSquareXTwitter className="footer-social" />
-                  <FaLinkedinIn className="footer-social" />
-                </div>
-              </footer>
-            </div>
-          </div>
-        </div>
-      </div> */}
+      </div>
     </div>
   );
 }

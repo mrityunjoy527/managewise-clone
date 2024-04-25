@@ -5,11 +5,12 @@
 
 html {
   scroll-behavior: smooth;
+
 }
 
 body {
   font-family: sans-serif;
-  background: linear-gradient(rgb(253, 242, 236), white);
+  background: linear-gradient(to bottom, rgb(253, 242, 236) 0%, white 11%, white 86%, rgb(253, 242, 236) 100%);
 }
 
 #navbar-logo {
@@ -195,6 +196,10 @@ body {
 }
 
 @media screen and (max-width: 809px) {
+  .faq-section1 {
+    align-self: center;
+  }
+
   .dot {
     display: none;
   }
@@ -249,6 +254,10 @@ body {
     border: null;
   }
 
+  .bg-color {
+    background-color: white;
+  }
+
   .get-started-hover:hover {
     outline: 8px solid rgba(157, 118, 255, 0.3);
   }
@@ -295,6 +304,11 @@ body {
   align-items: center;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #welcome {
   display: flex;
   justify-content: center;
@@ -313,7 +327,8 @@ body {
   font-size: 15px;
   letter-spacing: 2px;
   margin-bottom: 20px;
-  min-width: fit-content;
+  min-width: 1px;
+  white-space: nowrap;
 }
 
 #welcome h5 {
@@ -533,14 +548,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  max-width: 1230px;
+  width: 1230px;
 }
 
 @media screen and (max-width: 1399px) {
   #product-capacity {
     flex-direction: column;
     gap: 40px;
+    width: 100%;
     max-width: 560px;
   }
 }
@@ -609,6 +624,7 @@ body {
 }
 
 .setWidth {
+  width: 100%;
   max-width: 1230px;
 }
 
@@ -681,13 +697,14 @@ body {
 .display-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   gap: 30px;
 }
 
 @media screen and (max-width: 1399px) {
   .display-row {
     flex-direction: column;
+    align-items: center;
   }
 
   .card3 p {
@@ -740,11 +757,6 @@ body {
   -o-border-radius: 20px;
   margin-top: 10px;
   cursor: pointer;
-  transition: max-height 0.4s;
-  -webkit-transition: max-height 0.4s;
-  -moz-transition: max-height 0.4s;
-  -ms-transition: max-height 0.4s;
-  -o-transition: max-height 0.4s;
   box-sizing: border-box;
 }
 
@@ -753,13 +765,17 @@ body {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  box-sizing: border-box;
   padding: 20px 35px;
+  gap: 30px;
+  width: 100%;
 }
 
 .faq-head h3 {
   font-size: 23px;
   font-weight: bold;
-  width: 560px;
+  max-width: 560px;
+  width: 100%;
 }
 
 .faq-icon {
@@ -770,8 +786,38 @@ body {
 
 .faq-display-row {
   display: flex;
-  justify-content: space-between;
-  align-items: start;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 700px;
+  width: 100%;
+}
+
+.faq-section {
+  width: 1230px;
+}
+
+@media screen and (max-width: 1399px) {
+  .faq-display-row {
+    flex-direction: column;
+  }
+
+  .faq-section {
+    max-width: 1230px;
+    width: 100%;
+  }
+
+  .faq {
+    width: 100%;
+    min-width: 0px;
+  }
+}
+
+.faq-section-ques {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .faq p {
@@ -789,14 +835,28 @@ body {
   justify-content: space-between;
   align-items: start;
   background-color: #ededfa;
-  height: 380px;
-  width: 320px;
+  box-sizing: border-box;
+  height: 500px;
+  width: 400px;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
   padding: 40px 30px;
+}
+
+@media screen and (max-width: 1399px) {
+  .all-pricing {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 809px) {
+  .all-pricing {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .rent-price {
@@ -840,11 +900,23 @@ body {
 
 .faces-tab {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 80%;
-  height: 500px;
+  min-height: 560px;
+}
+
+@media screen and (max-width: 1399px) {
+  .faces-tab {
+    flex-direction: column;
+    gap: 40px;
+  }
 }
 
 .faces-tab-design {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1.5px solid rgb(242, 242, 242);
   border-radius: 30px;
   -webkit-border-radius: 30px;
@@ -855,30 +927,31 @@ body {
 }
 
 .faces {
-  width: 420px;
-  bottom: 50px;
   position: relative;
+  bottom: 120px;
+  width: 420px;
   z-index: 1;
+  object-fit: cover;
+  margin-bottom: -120px;
 }
 
 .blur {
-  width: 420px;
+  width: 422px;
   position: relative;
-  top: 110px;
+  top: 50px;
   z-index: 2;
 }
 
 .happy {
-  position: relative;
-  top: 70px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5px;
   border: 2px solid #ededfa;
   border-radius: 15px;
   align-items: center;
-  width: 320px;
-  height: 50px;
+  min-width: 205px;
+  min-height: 50px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
@@ -888,6 +961,10 @@ body {
 
 .happy h2:first-child {
   color: rgb(130, 71, 255);
+}
+
+.happy h2 {
+  font-size: 21px;
 }
 
 .happy-faces {
@@ -900,7 +977,13 @@ body {
 .footer-logo-sec {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center;
+}
+
+@media screen and (max-width: 809px){
+  .footer-logo-sec {
+    flex-direction: column;
+  }
 }
 
 .footer-logo {
@@ -914,6 +997,13 @@ body {
   cursor: pointer;
 }
 
+@media screen and (max-width: 809px) {
+  .options li {
+    text-align: center;
+  }
+}
+
+
 .options li:hover {
   color: #818181;
 }
@@ -921,7 +1011,15 @@ body {
 footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 40px 0px;
+  gap: 30px;
+}
+
+@media screen and (max-width: 809px) {
+  footer {
+    flex-direction: column;
+  }
 }
 
 .footer-social {
@@ -952,6 +1050,16 @@ footer > div {
   animation-duration: 50s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+
+.customer-section {
+  width: 1230px;
+}
+
+.customer-outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes anim {
@@ -1132,4 +1240,12 @@ footer > div {
   align-items: center;
   width: fit-content;
   flex-wrap: wrap;
+}
+
+.simple-margin {
+  margin: 0px 7em;
+}
+
+.simple-padding {
+  padding: 0px 30px;
 }

@@ -10,12 +10,14 @@ function WatchDemoBtn(props) {
   });
 
   return (
-    <div style={{ display: props.display }} className={`${windowWidth <= 809 ? "responsive-btn" : ""} watch-demo-btn`} >
-      <div className="btn-with-icon">
-        <input style={{ textAlign: "center" }} type="button" value="Watch Demo" />
-        <FaPlayCircle style={{fontSize: "30px"}} id="play-icon"/>
+    <a href="https://www.youtube.com">
+      <div style={{ display: props.display }} className={`${windowWidth <= 809 ? "responsive-btn" : ""} watch-demo-btn`} >
+        <div className="btn-with-icon">
+          <input style={{ textAlign: "center" }} type="button" value="Watch Demo" />
+          <FaPlayCircle style={{ fontSize: "30px" }} id="play-icon" />
+        </div>
       </div>
-    </div>
+    </a>
   );
 }
 

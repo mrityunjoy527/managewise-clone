@@ -7,7 +7,7 @@ function FAQTab(props) {
 
 
   return (
-    <div style={{maxHeight: expanded? "200px": "100px"}} key={props.idx} className={`faq slideUpButtonAnimation`}>
+    <div key={props.idx} className={`faq slideUpButtonAnimation`}>
       <div onClick={() => {
         setExpand((prev) => !prev);
       }} className="faq-head">
@@ -20,7 +20,7 @@ function FAQTab(props) {
           <GoPlus className="faq-icon" />
         )}
       </div>
-      <p style={{visibility: expanded? "visible": "hidden"}}>{props.ans}</p>
+      {expanded && <p>{props.ans}</p>}
     </div>
   );
 }
